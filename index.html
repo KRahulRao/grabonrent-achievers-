@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no">
+
+<title>Grab ON Rent</title>
+<script src="config/config.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+
+<!-- Angular -->
+<script>
+	document.write(
+	 '<script src="lib/angular/angular.js?v='+version+'\"><\/script>'
+    +'<script src="lib/imageCrop/ng-img-crop.js?v='+version+'\"><\/script>'
+	+'<script src="lib/angular/angular-ui-router.js?v='+version+'\"><\/script>'
+	+'<script src="lib/angular/angular-animate.js?v='+version+'\"><\/script>'
+	+'<script src="lib/angular/angular-resource.js?v='+version+'\"><\/script>'
+	+'<script src="lib/angular/ng-text-truncate.js?v='+version+'\"><\/script>'
+	+'<script src="lib/angular/angular-cookies.min.js?v='+version+'\"><\/script>'
+	+'<script src="lib/angular/angular-route.min.js?v='+version+'\"><\/script>'
+	+'<script src="lib/angularDatePicker/angular-datepicker.js?v='+version+'\"><\/script>'
+	);
+</script>
+
+
+<!-- JQuery, Bootstrap -->
+<script>
+	document.write(
+	 '<script src="lib/jquery-2.1.1/jquery.js?v='+version+'\"><\/script>'
+	+'<script src="lib/bootstrap-3.1.1/js/bootstrap.js?v='+version+'\"><\/script>'
+	+'<script src="lib/bootstrap-3.1.1/js/ui-bootstrap-tpls-0.13.0.min.js?v='+version+'\"><\/script>'
+	);
+</script>
+
+<script src="http://danml.com/js/download2.js"></script>
+
+<!-- External CSS   -->
+    
+<script>
+	document.write(
+	  '<link href="lib/bootstrap-3.1.1/css/bootstrap.css?v='+version+'\" rel="stylesheet" type="text/css" />'
+	 +'<link href="lib/imageCrop/ng-img-crop.css?v='+version+'\" rel="stylesheet" type="text/css" />'		
+	 +'<link href="lib/font-awesome/css/font-awesome.min.css?v='+version+'\" rel="stylesheet" type="text/css" />'	
+	 +'<link href="lib/angularDatePicker/angular-datepicker.css?v='+version+'\" rel="stylesheet" type="text/css" />'	
+			 
+	
+	);
+</script>
+   
+
+<!-- Custom JS | Custom Controller  -->
+<script>
+	document.write(
+	 '<script src="app.js?v='+version+'\"><\/script>'
+	 +'<script src="controller/homeController.js?v='+version+'\"><\/script>'
+	 +'<script src="controller/headerController.js?v='+version+'\"><\/script>'
+	 );
+</script>
+
+<!-- Custom Services  -->
+<script>
+	document.write(
+	 '<script src="services/modalService.js?v='+version+'\"><\/script>'
+	 +'<script src="services/loginModalService.js?v='+version+'\"><\/script>'
+	 );
+</script>
+</head>
+<body data-ng-app="grabOnRentApp"
+	style="margin: 0px; background-color: #FFFFFF; z-index: 1000; overflow-y:scroll;">
+	<div id="processing" style="display: none">
+	 	<img src="images/loading.gif" />
+	</div>
+	<div ng-include="'html/header.html'"></div>
+	<div class="container-fluid" style="padding:0;">
+		<div data-ui-view=""></div>
+	</div>
+	<div ng-include="'html/footer.html'"></div>
+</body>
+</html>
