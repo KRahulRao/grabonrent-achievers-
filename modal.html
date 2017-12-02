@@ -1,0 +1,18 @@
+ <div style="padding: 15px; border: 10px solid #005a9c;">
+	<div>
+		<h3 class="modal-title"
+			style="padding: 0% 2% 2% 2%; font-size: 15px; font-weight: bold; color: #1f0000; border-bottom: 1px solid #1f0000;">{{modalOptions.headerText}}</h3>
+	</div>
+	<div>
+		<div data-ng-repeat="message in modalOptions.bodyText"
+			style="margin: 2% 0%; color: black;">
+			<span class="glyphicon glyphicon-asterisk red-ast"></span><span>{{message}}</span>
+		</div>
+	</div>
+
+	<div style="padding: 0px 0px 0px 0px; height: 35px;">
+		<button type="button" class="btn btn-primary"
+			data-ng-click="modalOptions.close()"
+			style="float: right; margin-right: 1%;">{{modalOptions.closeButtonText}}</button>
+	</div>
+</div>

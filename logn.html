@@ -1,0 +1,46 @@
+<div style="padding: 15px; border: 10px solid #005a9c;">
+	<div>
+		<h3 class="modal-title"
+			style="padding: 0% 2% 2% 2%; font-size: 15px; font-weight: bold; color: #1f0000; border-bottom: 1px solid #1f0000;">{{modalOptions.headerText}}</h3>
+	</div>
+	<div class="modal-body" id="modal-body">
+
+<form class="form-horizontal" name="frm" novalidate>
+<!--Code to validate first name is written here-->
+<div class="form-group" >
+<label id="label" class="control-label">First Name:</label>
+<input type="text" class="form-control" name="username" ng-model="user.firstname" placeholder="Enter First Name" autocomplete="off" required />
+</div>
+<!--Code to validate email address is written here-->
+<div class="form-group">
+<label id="label" class="control-label">Email:</label>
+<input type="email" class="form-control" ng-model="user.email" name="email" placeholder="Enter Email Address" autocomplete="off" required>
+<span class="msg" ng-show="frm.email.$dirty && frm.email.$invalid">Email Address is not valid</span>
+</div>
+<!--Code to validate password is written here-->
+<div class="form-group">
+<label id="label" class="control-label">Password:</label>
+<input type="password" class="form-control" ng-model="user.pass" name="pass" placeholder="Enter Password" autocomplete="off" ng-minlength="5" ng-maxlength="12" required>
+<span class="msg" ng-show="frm.pass.$dirty && frm.pass.$error.minlength">password must contain atleast 5 charecters</span>
+<span class="msg" ng-show="frm.pass.$dirty && frm.pass.$error.maxlength">max-length of password reached</span>
+</div>
+
+<!--Code to validate gender field-->
+<div class="form-group">
+<label id="label" >Gender:</label>&nbsp;&nbsp;&nbsp;
+Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" ng-model="user.gender" value="male" required>
+&nbsp;&nbsp;&nbsp;&nbsp Female <input type="radio" name="gender" ng-model="user.gender" value="female" required></br>
+<span class="msg" ng-show="frm.gender.$error.required">select  Gender</span>
+</div>
+<!--Code to validate country field-->
+<!--Code to disable submit button is written here-->
+</form>
+</div>
+
+	<div style="padding: 0px 0px 0px 0px; height: 35px;">
+		<button class="btn btn-primary" type="button" ng-disabled="frm.$invalid" data-ng-click="modalOptions.submitForm()">Submit</button>
+		<button type="button" class="btn btn-primary" 
+			data-ng-click="modalOptions.close()"
+			style="float: right; margin-right: 1%;">{{modalOptions.closeButtonText}}</button>
+	</div>
+</div>

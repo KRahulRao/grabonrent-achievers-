@@ -1,0 +1,25 @@
+ <!-- Cards --->
+	  <div class="container-fluid" data-ng-controller="homeController">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="panel-default">
+                <div class="panel-body">
+                    
+                        <!-- <div class="w3-container"> -->
+                            <div class="w3-card-4 boxShadow pull-left" style="width:20%;margin:20px;" ng-repeat="bikeInfo in bikes">
+                                <div>
+                                    <img src="../images/hornet_and_cb100r_bikes_road_74164_1920x1080.jpg" alt="" style="width:100%;height:100%;">
+                                </div>                                 
+                                <div class="w3-container w3-center" style="height:115px;padding:0;text-align:center;">
+                                    <div style="color:#5452dc;padding:10px 0px;">{{ bikeInfo.bikeName }} - {{ bikeInfo.bikeModel }}</div>
+                                    <div style="color:#5452dc;padding:10px 0px;font-size:20px;font-weight:bold;">Price : {{ bikeInfo.bikePrice }}</div>                                
+                                    <div><button class="btn btn-primary" type="submit" style="width:100%;border-radius:0px;">Book Now</button></div>
+                                </div>
+                            </div>
+                        <!-- </div> -->
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
