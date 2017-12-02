@@ -1,0 +1,10 @@
+.boxShadow {
+    /* box-shadow: 0 4px 10px 0 rgba(26, 196, 226, 0.2), 0 4px 20px 0 rgba(26, 196, 226, 0.2); */
+    box-shadow: 0px 2px 5px 5px grey;
+    cursor: pointer;
+}
+
+.boxShadow:hover {
+    box-shadow: 0px 2px 5px 5px rgb(102, 203, 243);
+    cursor: pointer;
+}
