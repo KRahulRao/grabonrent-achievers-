@@ -33,7 +33,8 @@ let bikeFilters= {
     startDate:"",
     starttime:"",
     endDate:"",
-    endTime:""
+    endTime:"",
+    name:""
 } 
 
 
@@ -127,21 +128,33 @@ app.post('/validateUser',function(req,res){
 
 
 
-//====API for fetching bike data from the database and returning the results ======
+//====API for fetching  bike data  filtered from the database and returning the results ======
 app.post('/fetchBikeFilters',function(req,res){
     let  bikeRes = [];
     let  bikeSendRes = [];
+    
+    bikeFilters.startDate = req.body.filters.startDate;
+    bikeFilters.location = req.body.filters.location;
+    bikeFilters.type = req.body.filters.type;
+
     let db = mongoose.connection;
 
-    db.once('open',function(){
-       // db.bikeModels.find({ "startDate": bikeFilters.startDate, });
-        db.collection("bikeModel").find
-    })
+    db.once('open',function(err,docs){
+        db.bikeModels.find({ "startDate": bikeFilters.startDate, });
+        db.collection("bikeModel").find({ "bookings.lastBookingDate": { $lt: bikeFilters.startDate},"currentLocation":bikeFilters.location,
+        "bikeType":bikeFilters.type}).toArray(err,docs){
+             if (err) {
+           console.error(err); 
+         }else{
+           res.json(docs);             
+        }
+        };
 
-    for(var i = 0;i < RCD_LIMIT; i++){
-           
-    }
+
+    });
 });
+
+//====API for fetching all bike data from the database and returning the results ======
 
 app.get('/fetchAllBikes',function(req,res){
     let  bikeRes = [];
